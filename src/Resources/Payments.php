@@ -6,11 +6,6 @@ use Dcblogdev\Xero\Facades\Xero;
 
 class Payments extends Xero
 {
-    public function payments()
-    {
-        return new Payments();
-    }
-
     public function get(int $page = 1, string $where = null)
     {
         $params = http_build_query([
