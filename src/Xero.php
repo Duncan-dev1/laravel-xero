@@ -7,6 +7,8 @@ use Dcblogdev\Xero\Resources\Contacts;
 use Dcblogdev\Xero\Resources\Invoices;
 use Dcblogdev\Xero\Resources\Payments;
 use Dcblogdev\Xero\Resources\Payitems;
+use Dcblogdev\Xero\Resources\Employees;
+use Dcblogdev\Xero\Resources\PayrollCalendars;
 use Dcblogdev\Xero\Resources\Webhooks;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
@@ -38,6 +40,16 @@ class Xero
     public function payitems()
     {
         return new Payitems();
+    }
+
+    public function paycalendars()
+    {
+        return new PayrollCalendars();
+    }
+
+    public function employees()
+    {
+        return new Employees();
     }
 
     public function webhooks()
