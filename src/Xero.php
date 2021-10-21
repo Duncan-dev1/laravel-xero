@@ -6,6 +6,7 @@ use Dcblogdev\Xero\Models\XeroToken;
 use Dcblogdev\Xero\Resources\Contacts;
 use Dcblogdev\Xero\Resources\Invoices;
 use Dcblogdev\Xero\Resources\Payments;
+use Dcblogdev\Xero\Resources\Payitems;
 use Dcblogdev\Xero\Resources\Webhooks;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
@@ -13,7 +14,7 @@ use Exception;
 
 class Xero
 {
-    protected static $baseUrl       = 'https://api.xero.com/api.xro/2.0/';
+    protected static $baseUrl       = 'https://api.xero.com/payroll.xro/1.0/';
     protected static $authorizeUrl  = 'https://login.xero.com/identity/connect/authorize';
     protected static $connectionUrl = 'https://api.xero.com/connections';
     protected static $tokenUrl      = 'https://identity.xero.com/connect/token';
