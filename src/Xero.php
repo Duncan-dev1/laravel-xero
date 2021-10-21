@@ -35,6 +35,11 @@ class Xero
         return new Payments();
     }
 
+    public function payitems()
+    {
+        return new Payitems();
+    }
+
     public function webhooks()
     {
         return new Webhooks();
