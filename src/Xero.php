@@ -42,7 +42,7 @@ class Xero
         return new Payitems();
     }
 
-    public function paycalendars()
+    public function payrollcalendars()
     {
         return new PayrollCalendars();
     }
