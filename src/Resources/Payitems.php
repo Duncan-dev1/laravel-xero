@@ -36,6 +36,6 @@ class Payitems extends Xero
     {
         $result = Xero::post('payitems', $data);
 
-        return $result['body']['PayItems'][0];
+        return end($result['body']['PayItems']['EarningsRates']);
     }
 }

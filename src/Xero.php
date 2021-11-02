@@ -7,6 +7,7 @@ use Dcblogdev\Xero\Resources\Contacts;
 use Dcblogdev\Xero\Resources\Invoices;
 use Dcblogdev\Xero\Resources\Payments;
 use Dcblogdev\Xero\Resources\Payitems;
+use Dcblogdev\Xero\Resources\PayRuns;
 use Dcblogdev\Xero\Resources\Employees;
 use Dcblogdev\Xero\Resources\PayrollCalendars;
 use Dcblogdev\Xero\Resources\Webhooks;
@@ -45,6 +46,11 @@ class Xero
     public function payrollcalendars()
     {
         return new PayrollCalendars();
+    }
+
+    public function payruns()
+    {
+        return new PayRuns();
     }
 
     public function employees()
@@ -284,7 +290,7 @@ class Xero
             $client = new Client;
 
             $headers = [
-                'Accept'         => 'application/json',
+                'Content-Type' => 'application/json',
                 'Authorization'  => 'Bearer ' . $this->getAccessToken(),
                 'Xero-tenant-id' => $this->getTenantId(),
             ];
