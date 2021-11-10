@@ -58,6 +58,11 @@ class Xero
         return new Employees();
     }
 
+    public function timesheets()
+    {
+        return new Timesheets();
+    }
+
     public function webhooks()
     {
         return new Webhooks();
