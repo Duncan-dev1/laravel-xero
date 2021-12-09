@@ -6,6 +6,7 @@ use Dcblogdev\Xero\Models\XeroToken;
 use Dcblogdev\Xero\Resources\Contacts;
 use Dcblogdev\Xero\Resources\Invoices;
 use Dcblogdev\Xero\Resources\Payments;
+use Dcblogdev\Xero\Resources\Accounts;
 use Dcblogdev\Xero\Resources\Webhooks;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
@@ -32,6 +33,11 @@ class Xero
     public function payments()
     {
         return new Payments();
+    }
+
+    public function accounts()
+    {
+        return new Accounts();
     }
 
     public function webhooks()
