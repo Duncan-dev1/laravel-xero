@@ -38,4 +38,11 @@ class Accounts extends Xero
 
         return $result['body']['Accounts'][0];
     }
+
+    public function createAccount(array $data)
+    {
+        $result = Xero::put('accounts', $data);
+
+        return $result['body']['Accounts'][0];
+    }
 }
