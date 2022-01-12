@@ -2,9 +2,9 @@
 
 namespace Dcblogdev\Xero\Resources;
 
-use Dcblogdev\Xero\Facades\Xero;
+use Dcblogdev\Xero\Facades\XeroPayroll;
 
-class Timesheets extends Xero
+class Timesheets extends XeroPayroll
 {
     public function get(int $page = 1, string $where = null)
     {
@@ -13,28 +13,28 @@ class Timesheets extends Xero
             'where' => $where
         ]);
 
-        $result = Xero::get('timesheets?'.$params);
+        $result = XeroPayroll::get('timesheets?'.$params);
 
         return $result['body']['Timesheets'];
     }
 
     public function find(string $timesheetId)
     {
-        $result = Xero::get('timesheets/'.$timesheetId);
+        $result = XeroPayroll::get('timesheets/'.$timesheetId);
 
         return $result['body']['Timesheets'][0];
     }
 
     public function update(string $timesheetId, array $data)
     {
-        $result = Xero::post('timesheets/'.$timesheetId, $data);
+        $result = XeroPayroll::post('timesheets/'.$timesheetId, $data);
 
         return $result['body']['Timesheets'][0];
     }
 
     public function store(array $data) 
     {
-        $result = Xero::post('timesheets', $data);
+        $result = XeroPayroll::post('timesheets', $data);
 
         return $result['body']['Timesheets'][0];
     }

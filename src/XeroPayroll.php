@@ -3,12 +3,10 @@
 namespace Dcblogdev\Xero;
 
 use Dcblogdev\Xero\Models\XeroToken;
-use Dcblogdev\Xero\Resources\Contacts;
-use Dcblogdev\Xero\Resources\Invoices;
-use Dcblogdev\Xero\Resources\Payments;
 use Dcblogdev\Xero\Resources\Payitems;
 use Dcblogdev\Xero\Resources\PayRuns;
 use Dcblogdev\Xero\Resources\Employees;
+use Dcblogdev\Xero\Resources\Timesheets;
 use Dcblogdev\Xero\Resources\PayrollCalendars;
 use Dcblogdev\Xero\Resources\Webhooks;
 use GuzzleHttp\Client;
@@ -22,21 +20,6 @@ class XeroPayroll
     protected static $connectionUrl = 'https://api.xero.com/connections';
     protected static $tokenUrl      = 'https://identity.xero.com/connect/token';
     protected static $revokeUrl     = 'https://identity.xero.com/connect/revocation';
-
-    public function contacts()
-    {
-        return new Contacts();
-    }
-
-    public function invoices()
-    {
-        return new Invoices();
-    }
-
-    public function payments()
-    {
-        return new Payments();
-    }
 
     public function payitems()
     {
