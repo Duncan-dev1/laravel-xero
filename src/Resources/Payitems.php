@@ -2,9 +2,9 @@
 
 namespace Dcblogdev\Xero\Resources;
 
-use Dcblogdev\Xero\Facades\Xero;
+use Dcblogdev\Xero\Facades\XeroPayroll;
 
-class Payitems extends Xero
+class Payitems extends XeroPayroll
 {
     public function get(int $page = 1, string $where = null)
     {
@@ -13,28 +13,28 @@ class Payitems extends Xero
             'where' => $where
         ]);
 
-        $result = Xero::get('payitems?'.$params);
+        $result = XeroPayroll::get('payitems?'.$params);
 
         return $result['body']['PayItems'];
     }
 
     public function find(string $payItemId)
     {
-        $result = Xero::get('payitems/'.$payItemId);
+        $result = XeroPayroll::get('payitems/'.$payItemId);
 
         return $result['body']['PayItems'][0];
     }
 
     public function update(string $payItemId, array $data)
     {
-        $result = Xero::post('payitems/'.$payItemId, $data);
+        $result = XeroPayroll::post('payitems/'.$payItemId, $data);
 
         return $result['body']['PayItems'][0];
     }
 
     public function store(array $data) 
     {
-        $result = Xero::post('payitems', $data);
+        $result = XeroPayroll::post('payitems', $data);
 
         return $result['body']['PayItems']['EarningsRates'];
     }
