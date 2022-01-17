@@ -5,6 +5,7 @@ namespace Dcblogdev\Xero;
 use Dcblogdev\Xero\Models\XeroToken;
 use Dcblogdev\Xero\Resources\Payitems;
 use Dcblogdev\Xero\Resources\PayRuns;
+use Dcblogdev\Xero\Resources\Payslips;
 use Dcblogdev\Xero\Resources\Employees;
 use Dcblogdev\Xero\Resources\Timesheets;
 use Dcblogdev\Xero\Resources\PayrollCalendars;
@@ -46,6 +47,10 @@ class XeroPayroll
         return new Timesheets();
     }
 
+    public function payslips()
+    {
+        return new Payslips();
+    }
     public function webhooks()
     {
         return new Webhooks();
