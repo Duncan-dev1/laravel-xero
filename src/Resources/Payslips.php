@@ -13,29 +13,29 @@ class Payslips extends XeroPayroll
             'where' => $where
         ]);
 
-        $result = XeroPayroll::get('payslips?'.$params);
+        $result = XeroPayroll::get('payslip?'.$params);
 
-        return $result['body']['Payslips'];
+        return $result['body']['Payslip'];
     }
 
     public function find(string $payslipId)
     {
-        $result = XeroPayroll::get('payslips/'.$payslipId);
+        $result = XeroPayroll::get('payslip/'.$payslipId);
 
-        return $result['body']['Payslips'][0];
+        return $result['body']['Payslip'][0];
     }
 
     public function update(string $payslipId, array $data)
     {
-        $result = XeroPayroll::post('payslips/'.$payslipId, $data);
+        $result = XeroPayroll::post('payslip/'.$payslipId, $data);
 
-        return $result['body']['Payslips'][0];
+        return $result['body']['Payslip'][0];
     }
 
     public function store(array $data) 
     {
-        $result = XeroPayroll::post('payslips', $data);
+        $result = XeroPayroll::post('payslip', $data);
 
-        return $result['body']['Payslips'][0];
+        return $result['body']['Payslip'][0];
     }
 }
