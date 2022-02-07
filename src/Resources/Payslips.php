@@ -36,6 +36,6 @@ class Payslips extends XeroPayroll
     {
         $result = XeroPayroll::post('payslip', $data);
 
-        return $result['body']['Payslip'][0];
+        return $result['body']['Payslips'][0];
     }
 }

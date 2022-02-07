@@ -22,7 +22,7 @@ class Timesheets extends XeroPayroll
     {
         $result = XeroPayroll::get('timesheets/'.$timesheetId);
 
-        return $result['body']['Timesheets'][0];
+        return $result['body']['Timesheet'];
     }
 
     public function update(string $timesheetId, array $data)
