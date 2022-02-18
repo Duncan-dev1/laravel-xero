@@ -13,6 +13,6 @@ class XeroPayroll extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'xero';
+        return 'xeropayroll';
     }
 }

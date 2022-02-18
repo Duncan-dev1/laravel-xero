@@ -6,12 +6,6 @@ use Dcblogdev\Xero\Models\XeroToken;
 use Dcblogdev\Xero\Resources\Contacts;
 use Dcblogdev\Xero\Resources\Invoices;
 use Dcblogdev\Xero\Resources\Payments;
-use Dcblogdev\Xero\Resources\Payitems;
-use Dcblogdev\Xero\Resources\PayRuns;
-use Dcblogdev\Xero\Resources\Payslips;
-use Dcblogdev\Xero\Resources\Employees;
-use Dcblogdev\Xero\Resources\Timesheets;
-use Dcblogdev\Xero\Resources\PayrollCalendars;
 use Dcblogdev\Xero\Resources\Webhooks;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
@@ -19,7 +13,7 @@ use Exception;
 
 class Xero
 {
-    protected static $baseUrl       = 'https://api.xero.com/payroll.xro/1.0/';
+    protected static $baseUrl       = 'https://api.xero.com/api.xro/2.0/';
     protected static $authorizeUrl  = 'https://login.xero.com/identity/connect/authorize';
     protected static $connectionUrl = 'https://api.xero.com/connections';
     protected static $tokenUrl      = 'https://identity.xero.com/connect/token';
@@ -38,31 +32,6 @@ class Xero
     public function payments()
     {
         return new Payments();
-    }
-
-    public function payitems()
-    {
-        return new Payitems();
-    }
-
-    public function payrollcalendars()
-    {
-        return new PayrollCalendars();
-    }
-
-    public function payruns()
-    {
-        return new PayRuns();
-    }
-
-    public function employees()
-    {
-        return new Employees();
-    }
-
-    public function timesheets()
-    {
-        return new Timesheets();
     }
 
     public function webhooks()
@@ -297,7 +266,7 @@ class Xero
             $client = new Client;
 
             $headers = [
-                'Content-Type' => 'application/json',
+                'Accept' => 'application/json',
                 'Authorization'  => 'Bearer ' . $this->getAccessToken(),
                 'Xero-tenant-id' => $this->getTenantId(),
             ];

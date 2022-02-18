@@ -48,6 +48,10 @@ class XeroServiceProvider extends ServiceProvider
         $this->app->singleton('xero', function ($app) {
             return new Xero;
         });
+
+        $this->app->singleton('xeropayroll', function ($app) {
+            return new XeroPayroll;
+        });
     }
 
     /**
