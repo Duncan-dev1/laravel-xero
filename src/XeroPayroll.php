@@ -51,9 +51,15 @@ class XeroPayroll
     {
         return new Payslips();
     }
+
     public function webhooks()
     {
         return new Webhooks();
+    }
+
+    public function superfunds()
+    {
+        return new SuperFunds();
     }
 
     public function isConnected()
