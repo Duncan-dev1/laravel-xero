@@ -10,6 +10,7 @@ use Dcblogdev\Xero\Resources\Employees;
 use Dcblogdev\Xero\Resources\Timesheets;
 use Dcblogdev\Xero\Resources\PayrollCalendars;
 use Dcblogdev\Xero\Resources\Webhooks;
+use Dcblogdev\Xero\Resources\SuperFunds;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use Exception;
