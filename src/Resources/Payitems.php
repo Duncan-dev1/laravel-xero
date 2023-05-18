@@ -38,4 +38,8 @@ class Payitems extends XeroPayroll
 
         return $result['body']['PayItems'];
     }
+
+    public function rename(){
+        
+    }
 }
