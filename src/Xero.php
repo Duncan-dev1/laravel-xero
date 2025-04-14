@@ -81,7 +81,7 @@ class Xero
                 'response_type' => 'code',
                 'client_id'     => config('xero.clientId'),
                 'redirect_uri'  => config('xero.redirectUri'),
-                'scope'         => config('xero.scopes')
+                'scope'         => "openid email profile offline_access accounting.settings accounting.transactions accounting.contacts payroll.settings payroll.employees payroll.payruns"
             ]);
 
             return redirect()->away($url);
